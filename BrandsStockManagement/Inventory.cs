@@ -72,5 +72,12 @@ namespace BrandsStockManagement
         {
             removeFacade.updateItem(code, this.productsDic, quantity);
         }
+
+        public void AddtoCart(string code)
+        {
+            Product cloneProduct = this.productsDic[code].DeepCopy();
+            Console.WriteLine(cloneProduct.ProductType);
+            this.productsDic[code].Qty -= 1;
+        }
     }
 }

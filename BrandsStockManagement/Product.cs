@@ -23,5 +23,20 @@ namespace BrandsStockManagement
             Qty = qty;
             ProductType = productType;
         }
+
+        //prototype design pattern
+        public Product DeepCopy()
+        {
+            Product product = (Product)this.MemberwiseClone();
+            if (this.ProductType.GetType() == typeof(Jeans))
+            {
+                product.ProductType = new Jeans();
+            }
+            else
+            {
+                product.ProductType = new Tshirt();
+            }
+            return product;
+        }
     }
 }

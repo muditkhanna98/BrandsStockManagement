@@ -75,6 +75,15 @@
             int quantity = Convert.ToInt32(Console.ReadLine());
             inventory.UpdateQuantity(code, quantity);
             inventory.DisplayInventory();
+
+            Console.WriteLine("Enter the product code of product that you want to add to the cart");
+            string prodCode = Console.ReadLine();
+
+
+            //prototype design pattern
+            inventory.AddtoCart(prodCode);
+
+            inventory.DisplayInventory();
             inventory.DisplayProcesses();
         }
     }
